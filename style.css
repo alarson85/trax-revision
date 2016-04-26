@@ -1,4 +1,295 @@
-.css-container {
-	background-color: yellow;
+.log-css-container {
+	background-color: peru;
+	height: 100vh;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.log-aboutText {
+	text-align: right;
+}
+
+.log-contactText {
+	text-align: left;
+}
+
+.log-noMargin {
+	margin-bottom: 0;
+}
+
+@media (max-width: 600px){
+	.log-disappearingDiv{
+		display: none;
+	}
+}
+
+@media (min-width: 500px){
+	.log-mediaContainer {
+		padding: 0 !important;
+	}
+	.log-blackBox {
+		height: 100vh;
+	}
+}
+
+.log-disappearingDiv {
+	margin: 3em 0;
+}
+
+.log-blackBox {
+	background-color: black;
+	padding: 0 !important;
+}
+
+.log-formContainer {
+	padding: 1em 3em;
+}
+
+.log-input {
+	width: inherit;
+}
+
+.log-submitButton {
+	background-color: green;
+	width: inherit;
+}
+
+/*Syles are arranged by containers, and then where they are located on the page*/
+/*media queries at bottom*/
+
+/*=======================*/
+
+/*Template Styles*/
+
+/*=======================*/
+
+
+/*color template*/
+
+/*#91d000 green
+#1b2224 black
+#f2f2ea white
+#0e1112 black*/
+
+
+/* Fonts */
+@font-face { font-family: "Dharma-ExLight-I"; src: url(../fonts/DharmaGothicE_ExLight_I.otf);}
+@font-face { font-family: "Dharma-ExLight"; src: url(../fonts/DharmaGothicE_ExLight_R.otf);}
+@font-face { font-family: "Dharma-Light-I"; src: url(../fonts/DharmaGothicE_Light_I.otf);}
+@font-face { font-family: "Dharma-Light"; src: url(../fonts/DharmaGothicE_Light_R.otf);}
+
+
+/*=======================*/
+
+/*element templates*/
+
+/*=======================*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Dharma-ExLight", helvetica;
+}
+
+.login-container ul li{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.login-container input {
+	text-align: center;
+	font-family: "proxima-nova";
+	width: 100%;
+	margin: 0 0 3px 0 !important;
+}
+
+
+.login-fadedText {
+	color: rgba(255, 255, 255, 0.5);
+	font-family: "proxima-nova";
+}
+
+.login-whiteText {
+	color: #f2f2ea;
+	font-family: "proxima-nova";
+}
+
+.login-noPadding {
+	padding: 0;
+}
+
+/*div button {
+	display: inline;
+}
+*/
+
+/*=======================*/
+
+/*wrapper/container*/
+
+/*=======================*/
+
+.login-container {
+	background-image: url(../img/login-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	height: 100vh;
+	padding: 2em 5em;
+}
+
+.login-header {
+	text-transform: uppercase;
+	padding-bottom: 0;
+	font-size: 1em;
+}
+
+.login-container {
+	background-image: url(../img/login-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100vh;
 }
+
+.login-nav {
+	text-align: right;
+}
+
+.login-box {
+	background-color: #0e1112;
+	margin: 3.5em auto;
+	max-width: 340px;
+	text-align: center;
+}
+
+.fa-logo-login {
+	padding-top: .5em;
+	color: #f2f2ea;
+}
+
+.login-text {
+	color: #91d000;
+	font-size: 3em;
+}
+
+.login-buttons {
+	padding: 0;
+}
+
+.login-trainerButton {
+	background-color: #91d000;
+	border: none;
+	padding: .6em 0;
+}
+
+.login-clientButton {
+	background-color: transparent;
+	border: 3px solid #f2f2ea;
+	padding: .4em 0;
+}
+
+.login-inputSpacing {
+	margin-bottom: 6px;
+}
+
+.aboutInput {
+	height: 2.6em;
+	width: 100%
+	font-size: 1.2em;
+}
+
+.loginResetPassword {
+	/*margin-top: -20px;*/
+	margin: 0 0 1em 0;
+	text-transform: lowercase;
+}
+
+.loginSignupButton {
+	margin: 1em 0; 
+}
+
+.loginSignup {
+	color: #91d000;
+	border: 2px solid #91d000;
+	font-family: "proxima-nova";
+	font-weight: 100;
+	font-size: 1em;
+	padding: .3em 2em;  
+}
+
+.loginButton {
+	width: 100%;
+	background-color: #91d000;
+	height: 3em;
+	margin-top: 1em;
+	padding-top: .6em;
+}
+
+.login-button {
+	color: #f2f2ea;
+	font-family: "proxima-nova";
+	font-size: 22px;
+	border: none;
+	background-color: #91d000;
+}
+
+/*=======================*/
+
+/*Media Queries*/
+
+/*=======================*/
+
+/*@media (min-width: 480px){
+	.login-header{
+		padding-bottom: 0 !important;
+	}
+}*/
+
+@media (max-width: 767px){
+	.login-header{
+		text-align: center;
+		padding: 1em 0 0 0;
+	}
+
+	.login-nav {
+		display: none; 
+	}
+
+	.login-box{
+		background-color: transparent !important;
+	}
+}
+
+@media (max-width: 480px){
+	.login-header {
+		padding-bottom: 0 !important;
+	}
+	.fa-logo-login{
+		padding-top: 0 !important;
+	}
+	.login-container {
+		padding:.5em 0;
+	}
+	p.login-text {
+		margin-bottom: 0 !important;
+	}
+}
+
+@media (min-width: 768px){
+	.loginNavBottom{
+		display: none;
+		text-align: center !important;
+	}
+
+}
+
+@media (max-width: 767px){
+	.login-box {
+		margin-top: 0;
+	}
+}
+

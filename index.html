@@ -1,14 +1,72 @@
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 </head>
 <body>
-	<div class="css-container">
-		<div class="container">
+	<div class="log-css-container">
+		<div class="container log-mediaContainer">
+			<div class="row">
+				<div class="col-lg-3 log-noPad">
+					<p class="log-noMargin">DATE: NUM, DAY, MTH</p>
+				</div>
+				<div class="col-lg-6" id="log-midColumn">
 
+				</div>
+				<div class="col-lg-3">
+					<div class="row">
+						<div class="col-xs-5 log-aboutText">
+							<Pclass="log-noMargin">ABOUT</P>
+						</div>
+						<div class="col-xs-2 log-vertLineText">
+							<Pclass="log-noMargin">|</P>
+						</div>
+						<div class="col-xs-5 log-contactText">
+							<Pclass="log-noMargin">CONTACT</P>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 log-disappearingDiv"></div>
+			</div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4 log-blackBox">
+					<div class="container log-formContainer">
+						<div class="row">
+							<div class="col-m-12">FlexTrax</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">LOGIN</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5 col-md-offset-1">TRAINER</div>
+							<div class="col-md-5">CLIENT</div>
+						</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1"><input class="log-input"/></div>
+						</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1"><input class="log-input"/></div>
+						</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1"><p><a href=""></a>reset</p></div>
+						</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1"><button></button></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<input type="button" name="submit" class="log-submitButton"/>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -16,3 +74,70 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<div class="container-fluid login-container">
+    <header class="page-header login-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-12" ng-controller="LoginControl">
+                <p class="login-fadedText login-header">{{CurrentDate | date:'EEEE, dd, MMMM yyyy'}}</p>
+            </div>
+            <ul class="col-md-6 col-sm-12 login-nav">
+                <li><a ui-sref="about" class="login-fadedText">ABOUT </a></li>
+                <li class="login-fadedText"> | </li>
+                <li><a ui-sref="support" class="login-fadedText"> CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row login-box">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 loginLogoContainer">
+                        <i class="fa fa-logo fa-3x fa-logo-login"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="login-text">LOGIN</p>
+                    </div>
+                </div>
+                <form name="login" ng-submit="loginForm()" novalidate>
+                <div class="row">
+                    <div class="col-xs-12 login-inputSpacing">
+                        <div class="row">
+                            <div class="col-sm-3 col-sm-offset-3 col-xs-6 pull-right login-buttons login-trainerButton login-whiteText" ng-click="getRole('trainer')" ng-class="{loginTrainerButton : trainer}">
+                                Trainer
+                            </div>
+                            <div class="col-sm-3 col-xs-6 pull-left login-buttons login-clientButton login-whiteText login-buttons" ng-click="getRole('trainee')" ng-class="{loginTrainerButton : !trainer}">
+                                Client
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1 login-noPadding" ng-class="">
+                        <input type="email" name="email" value="" class="aboutInput login-inputSpacing" ng-model="user.email" placeholder="email" required/>
+                        <input type="text" name="password" class="aboutInput" ng-model="user.password" placeholder="password" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 loginResetPassword">
+                        <a href="#" class="login-fadedText">reset password</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 loginSignupButton">
+                        <a ui-sref="signup" class="loginSignup">SIGN UP</a>
+                        <!-- ng-hide when client is selected -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 loginButton">
+                        <button type="submit" name="login" class="login-button">LOGIN</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
